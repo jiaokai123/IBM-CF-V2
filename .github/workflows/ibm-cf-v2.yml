@@ -52,13 +52,13 @@ jobs:
 
     - name: Download Latest Xray
       run: |
-        DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/xray-linux-64.zip"
+        DOWNLOAD_URL="https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip"
         curl -fsSL "$DOWNLOAD_URL" -o "latest-Xray.zip"
         unzip latest-Xray.zip xray geoip.dat geosite.dat
         rm latest-Xray.zip
         chmod -v 755 v2*
         ./Xray -version
-        mv Xray ${IBM_CF_APP_NAME}
+        mv xray ${IBM_CF_APP_NAME}
 
     - name: Generate Xray Config File (VMess)
       if: ${{ env.V2_WS_PATH_VMESS }}
