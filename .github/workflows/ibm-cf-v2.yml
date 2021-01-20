@@ -56,7 +56,7 @@ jobs:
         curl -fsSL "$DOWNLOAD_URL" -o "latest-Xray.zip"
         unzip latest-Xray.zip xray geoip.dat geosite.dat
         rm latest-Xray.zip
-        chmod -v 755
+        chmod -v 755 xr*
         ./xray -version
         mv xray ${IBM_CF_APP_NAME}
 
